@@ -1,13 +1,5 @@
 class Encryptor
   class << self
-    def encrypt_table
-      cipher_table(rot)
-    end
-
-    def decrypt_table
-      cipher_table(-rot)
-    end
-
     def cipher(rot)
       chars = (' '..'z').to_a
       rotated_chars = chars.rotate(rot)
