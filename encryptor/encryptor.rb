@@ -31,5 +31,15 @@ class Encryptor
       decrypted_file = File.open("#{filename}.decrypted", 'w')
       decrypted_file.write(decrypted_input)
     end
+
+    def crack(string)
+      results = {}
+      rot = 1
+      (' '..'z').to_a.length.times do
+        results["ROT-#{rot}"] = decrypt(string, rot)
+        rot += 1
+      end
+      results
+    end
   end
 end
